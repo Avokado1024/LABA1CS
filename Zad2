@@ -1,20 +1,23 @@
-using System;
-using System.Runtime.CompilerServices;
 
-class Rectangle
+using System;
+
+public class MyRectangle
 {
     private double sideA;
     private double sideB;
-    public Rectangle(double sideA, double sideB)
-    { this.sideA = sideA;
+
+    public MyRectangle(double sideA, double sideB)
+    {
+        this.sideA = sideA;
         this.sideB = sideB;
     }
 
-    private double CalcArea()
+    public double CalcArea()
     {
         return sideA * sideB;
     }
-    private double CalcPerimetr()
+
+    public double CalcPerimeter()
     {
         return 2 * (sideA + sideB);
     }
@@ -23,19 +26,22 @@ class Rectangle
     {
         get { return CalcArea(); }
     }
-    public double Perimetr
-    {  get { return CalcPerimetr(); } }
+
+    public double Perimeter
+    {
+        get { return CalcPerimeter(); }
+    }
 }
-class programm
+
+class Program
 {
     static void Main()
     {
         double sideA = double.Parse(Console.ReadLine());
         double sideB = double.Parse(Console.ReadLine());
-        Rectangle a = new Rectangle(sideA, sideB);
+        MyRectangle a = new MyRectangle(sideA, sideB);
         Console.WriteLine(a.Area);
-        Console.WriteLine(a.Perimetr);
+        Console.WriteLine(a.Perimeter);
         Console.ReadKey();
-
     }
 }
